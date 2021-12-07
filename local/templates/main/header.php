@@ -89,7 +89,7 @@ use Bitrix\Main\Page\Asset;
 	</div>
 
 	<!-- Шапка сайта (меню) -->
-	<header id="sticky-header" class="header-area header-wrapper white-bg">
+	<header id="sticky-header" class="header-area header-wrapper <?= ($APPLICATION->GetCurDir() === '/') ? 'transparent-header' : 'white-bg' ?>">
 		<!-- Меню (для десктопа) -->
 		<div class="header-middle-area full-width">
 			<div class="container">
@@ -195,26 +195,28 @@ use Bitrix\Main\Page\Asset;
 	</header>
 
 	<!-- Хлебные крошки (навигация) -->
-	<div class="breadcrumb-area brand-bg ptb-100">
-		<div class="container width-100">
-			<div class="row z-index">
-				<div class="col-md-7 col-sm-6">
-					<div class="breadcrumb-title">
-						<h2 class="white-text"><? $APPLICATION->ShowTitle(false); ?></h2>
+	<? if($APPLICATION->GetCurDir() !== '/'): ?>
+		<div class="breadcrumb-area brand-bg ptb-100">
+			<div class="container width-100">
+				<div class="row z-index">
+					<div class="col-md-7 col-sm-6">
+						<div class="breadcrumb-title">
+							<h2 class="white-text"><? $APPLICATION->ShowTitle(false); ?></h2>
+						</div>
 					</div>
-				</div>
-				<div class="col-md-5 col-sm-6">
-					<div class="breadcrumb-menu">
-						<ol class="breadcrumb text-right">
-							<li>
-								<a href="index.html">Главная</a>
-							</li>
-							<li>
-								<a href="#">О нас</a>
-							</li>
-						</ol>
+					<div class="col-md-5 col-sm-6">
+						<div class="breadcrumb-menu">
+							<ol class="breadcrumb text-right">
+								<li>
+									<a href="index.html">Главная</a>
+								</li>
+								<li>
+									<a href="#">О нас</a>
+								</li>
+							</ol>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+	<? endif; ?>
