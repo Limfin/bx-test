@@ -113,7 +113,7 @@ use Bitrix\Main\Page\Asset;
 											<a href="/">Главная</a>
 										</li>
 										<li>
-											<a href="about_us.html">О нас</a>
+											<a href="/about/">О нас</a>
 										</li>
 										<li>
 											<a href="services.html"> Услуги
@@ -216,7 +216,7 @@ use Bitrix\Main\Page\Asset;
 			<div class="row z-index">
 				<div class="col-md-7 col-sm-6">
 					<div class="breadcrumb-title">
-						<h2 class="white-text">О студии</h2>
+						<h2 class="white-text"><? $APPLICATION->ShowTitle(false); ?></h2>
 					</div>
 				</div>
 				<div class="col-md-5 col-sm-6">
