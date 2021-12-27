@@ -69,8 +69,30 @@ use Bitrix\Main\Page\Asset;
 			<div class="row">
 				<div class="col-md-6 col-sm-6">
 					<div class="welcome">
-						<span><i class="fa fa-envelope"></i> admin@domain.com</span>
-						<span><i class="fa fa-phone"></i> +012 345 6789</span>
+						<span>
+							<? $APPLICATION->IncludeComponent(
+								"bitrix:main.include",
+								"",
+								array(
+									"AREA_FILE_SHOW" => "file",
+									"AREA_FILE_SUFFIX" => "inc",
+									"EDIT_TEMPLATE" => "",
+									"PATH" => SITE_TEMPLATE_PATH . "/includes/header_email.php"
+								)
+							); ?>
+						</span>
+						<span>
+							<? $APPLICATION->IncludeComponent(
+								"bitrix:main.include",
+								"",
+								array(
+									"AREA_FILE_SHOW" => "file",
+									"AREA_FILE_SUFFIX" => "inc",
+									"EDIT_TEMPLATE" => "",
+									"PATH" => SITE_TEMPLATE_PATH . "/includes/header_phone.php"
+								)
+							); ?>
+						</span>
 					</div>
 				</div>
 				<div class="col-md-6 col-sm-6">
@@ -195,7 +217,7 @@ use Bitrix\Main\Page\Asset;
 	</header>
 
 	<!-- Хлебные крошки (навигация) -->
-	<? if($APPLICATION->GetCurDir() !== '/'): ?>
+	<? if ($APPLICATION->GetCurDir() !== '/') : ?>
 		<div class="breadcrumb-area brand-bg ptb-100">
 			<div class="container width-100">
 				<div class="row z-index">
