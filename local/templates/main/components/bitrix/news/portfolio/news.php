@@ -24,15 +24,30 @@ $this->setFrameMode(true);
 		</div>
 		<div class="row">
 
-			<div class="col-lg-12">
-				<div class="portfolio-menu brand-filter text-center mb-70">
-					<div class="filter" data-filter="all">Все</div>
-					<div class="filter" data-filter=".landing">Лендинги</div>
-					<div class="filter" data-filter=".internet_shop">Интренет магазины</div>
-					<div class="filter" data-filter=".promo">Промо сайты</div>
-					<div class="filter" data-filter=".corporative_site">Корпоративные порталы</div>
-				</div>
-			</div>
+			<? $APPLICATION->IncludeComponent(
+				"bitrix:catalog.section.list",
+				"portfolioSectionList",
+				array(
+					"ADD_SECTIONS_CHAIN" => "N",
+					"CACHE_FILTER" => "N",
+					"CACHE_GROUPS" => "N",
+					"CACHE_TIME" => "36000000",
+					"CACHE_TYPE" => "A",
+					"COUNT_ELEMENTS" => "N",
+					"COUNT_ELEMENTS_FILTER" => "CNT_ACTIVE",
+					"FILTER_NAME" => "sectionsFilter",
+					"IBLOCK_ID" => $arParams["IBLOCK_ID"],
+					"IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
+					"SECTION_CODE" => "",
+					"SECTION_FIELDS" => array(0 => "CODE", 1 => "NAME", 2 => "",),
+					"SECTION_ID" => "",
+					"SECTION_URL" => "",
+					"SECTION_USER_FIELDS" => array(0 => "", 1 => "",),
+					"SHOW_PARENT_NAME" => "Y",
+					"TOP_DEPTH" => "1",
+					"VIEW_MODE" => "LINE"
+				)
+			); ?>
 
 
 			<? $APPLICATION->IncludeComponent(

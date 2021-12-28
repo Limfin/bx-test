@@ -13,7 +13,7 @@ $arUrlRewrite=array (
     'CONDITION' => '#^/portfolio/#',
     'RULE' => '',
     'ID' => 'bitrix:news',
-    'PATH' => '/test.php',
+    'PATH' => '/portfolio/index.php',
     'SORT' => 100,
   ),
   1 => 

@@ -34,7 +34,7 @@ if (!empty($arResult['ITEMS'])) {
 			$arElementSectionsCodes = [];
 			foreach ($arSections as $section) {
 				if ($arItem['ID'] == $section['IBLOCK_ELEMENT_ID']) {
-					$arElementsSectionCodes[] = $section['CODE'];
+					$arElementSectionsCodes[] = $section['CODE'];
 				}
 			}
 
