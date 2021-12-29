@@ -1,35 +1,35 @@
 <?
-require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetPageProperty("TITLE", "Title+");
 $APPLICATION->SetPageProperty("keywords", "Keywords+");
 $APPLICATION->SetPageProperty("description", "Description+");
 $APPLICATION->SetTitle("Тест");
-?><?$APPLICATION->IncludeComponent("bitrix:catalog.section.list", "portfolioSectionList", Array(
-	"ADD_SECTIONS_CHAIN" => "N",	// Включать раздел в цепочку навигации
-		"CACHE_FILTER" => "N",	// Кешировать при установленном фильтре
-		"CACHE_GROUPS" => "N",	// Учитывать права доступа
-		"CACHE_TIME" => "36000000",	// Время кеширования (сек.)
-		"CACHE_TYPE" => "A",	// Тип кеширования
-		"COUNT_ELEMENTS" => "N",	// Показывать количество элементов в разделе
-		"COUNT_ELEMENTS_FILTER" => "CNT_ACTIVE",	// Показывать количество
-		"FILTER_NAME" => "sectionsFilter",	// Имя массива со значениями фильтра разделов
-		"IBLOCK_ID" => "4",	// Инфоблок
-		"IBLOCK_TYPE" => "content",	// Тип инфоблока
-		"SECTION_CODE" => "",	// Код раздела
-		"SECTION_FIELDS" => array(	// Поля разделов
-			0 => "CODE",
-			1 => "NAME",
-			2 => "",
+?>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<? $APPLICATION->IncludeComponent("mycomponents:main.feedback", "contactsPageForm", Array(
+	"EMAIL_TO" => "victor010389@yandex.ru",	// E-mail, на который будет отправлено письмо
+		"EVENT_MESSAGE_ID" => array(	// Почтовые шаблоны для отправки письма
+			0 => "7",
 		),
-		"SECTION_ID" => "",	// ID раздела
-		"SECTION_URL" => "",	// URL, ведущий на страницу с содержимым раздела
-		"SECTION_USER_FIELDS" => array(	// Свойства разделов
-			0 => "",
-			1 => "",
+		"OK_TEXT" => "Спасибо, ваше сообщение принято.",	// Сообщение, выводимое пользователю после отправки
+		"REQUIRED_FIELDS" => array(	// Обязательные поля для заполнения
+			0 => "NAME",
+			1 => "EMAIL",
+			2 => "PHONE",
 		),
-		"SHOW_PARENT_NAME" => "Y",	// Показывать название раздела
-		"TOP_DEPTH" => "1",	// Максимальная отображаемая глубина разделов
-		"VIEW_MODE" => "LINE",	// Вид списка подразделов
+		"USE_CAPTCHA" => "N",	// Использовать защиту от автоматических сообщений (CAPTCHA) для неавторизованных пользователей
+		"AJAX_MODE" => "Y" //отправка формы без перезагрузки страницы
 	),
 	false
-);?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+); ?>
+<? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>
