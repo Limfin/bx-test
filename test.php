@@ -4,32 +4,20 @@ $APPLICATION->SetPageProperty("TITLE", "Title+");
 $APPLICATION->SetPageProperty("keywords", "Keywords+");
 $APPLICATION->SetPageProperty("description", "Description+");
 $APPLICATION->SetTitle("Тест");
-?>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<? $APPLICATION->IncludeComponent("mycomponents:main.feedback", "contactsPageForm", Array(
-	"EMAIL_TO" => "victor010389@yandex.ru",	// E-mail, на который будет отправлено письмо
-		"EVENT_MESSAGE_ID" => array(	// Почтовые шаблоны для отправки письма
-			0 => "7",
-		),
-		"OK_TEXT" => "Спасибо, ваше сообщение принято.",	// Сообщение, выводимое пользователю после отправки
-		"REQUIRED_FIELDS" => array(	// Обязательные поля для заполнения
-			0 => "NAME",
-			1 => "EMAIL",
-			2 => "PHONE",
-		),
-		"USE_CAPTCHA" => "N",	// Использовать защиту от автоматических сообщений (CAPTCHA) для неавторизованных пользователей
-		"AJAX_MODE" => "Y" //отправка формы без перезагрузки страницы
+?><br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <?$APPLICATION->IncludeComponent("bitrix:breadcrumb", "topNavigate", Array(
+	"PATH" => "",	// Путь, для которого будет построена навигационная цепочка (по умолчанию, текущий путь)
+		"SITE_ID" => "s1",	// Cайт (устанавливается в случае многосайтовой версии, когда DOCUMENT_ROOT у сайтов разный)
+		"START_FROM" => "0",	// Номер пункта, начиная с которого будет построена навигационная цепочка
 	),
 	false
-); ?>
-<? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>
+);?><br>
+ <br><? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>

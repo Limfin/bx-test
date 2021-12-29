@@ -5,6 +5,8 @@ $APPLICATION->SetTitle('Контакты'); //заловок на страниц
 $APPLICATION->SetPageProperty('TITLE', 'Контакты'); //загловок на вкладке браузера
 $APPLICATION->SetPageProperty("keywords", "Keywords Контакты");
 $APPLICATION->SetPageProperty("description", "Description Контакты");
+
+$APPLICATION->AddChainItem($APPLICATION->GetTitle(), $APPLICATION->GetCurDir()); //добавление данных в навигационную цепочку
 ?>
 
 

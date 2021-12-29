@@ -5,6 +5,8 @@ $APPLICATION->SetTitle('О нас'); //заловок на странице
 $APPLICATION->SetPageProperty('TITLE', 'О нас'); //загловок на вкладке браузера
 $APPLICATION->SetPageProperty("keywords", "Keywords о нас");
 $APPLICATION->SetPageProperty("description", "Description о нас");
+
+$APPLICATION->AddChainItem($APPLICATION->GetTitle(), $APPLICATION->GetCurDir()); //добавление данных в навигационную цепочку
 ?>
 <?= "Вывод description: " . $APPLICATION->GetPageProperty("description"); ?>
 
